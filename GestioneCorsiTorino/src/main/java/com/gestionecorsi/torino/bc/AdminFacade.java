@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.gestionecorsi.torino.model.Corsista;
 import com.gestionecorsi.torino.model.Corso;
 import com.gestionecorsi.torino.model.Docente;
 
@@ -52,22 +53,22 @@ public class AdminFacade {
 		return dBC.getDocenteMostCorsi();
 	}
 	
-	public void createFromModel(Corso model) throws ClassNotFoundException, IOException, SQLException {
+	public void createCorso(Corso model) throws ClassNotFoundException, IOException, SQLException {
 		CorsoBC cBC = new CorsoBC ();
 		cBC.createFromModel(model);
 	}
 	
-	public void removeByModel(Corso model) throws ClassNotFoundException, IOException, SQLException {
+	public void removeCorso(Corso model) throws ClassNotFoundException, IOException, SQLException {
 		CorsoBC cBC = new CorsoBC ();
 		cBC.removeByModel(model);
 	}
 	
-	public Corso getModelByNumericalId(long id) throws ClassNotFoundException, IOException, SQLException {
+	public Corso getCorsoById(long id) throws ClassNotFoundException, IOException, SQLException {
 		CorsoBC cBC = new CorsoBC ();
 		return cBC.getModelByNumericalId(id);
 	}
 	
-	public List<Corso> getAll() throws ClassNotFoundException, IOException, SQLException{
+	public List<Corso> getCorsi() throws ClassNotFoundException, IOException, SQLException{
 		CorsoBC cBC = new CorsoBC ();
 		return cBC.getAll();
 	}
@@ -91,5 +92,28 @@ public class AdminFacade {
 		return cBC.getCountCommenti(id);
 	}
 	
+	public void createCorsista(Corsista model) throws ClassNotFoundException, IOException, SQLException {
+		CorsistaBC cBC = new CorsistaBC();
+		cBC.createFromModel(model);
+	}
 	
+	public Corsista getCorsistaById(long id) throws ClassNotFoundException, IOException, SQLException {
+		CorsistaBC cBC = new CorsistaBC();
+		return cBC.getByNumericalId(id);
+	}
+	
+	public List<Corsista> getCorsisti() throws ClassNotFoundException, IOException, SQLException {
+		CorsistaBC cBC = new CorsistaBC();
+		return cBC.getAll();
+	}
+	
+	public void removeCorsista(Corsista model) throws ClassNotFoundException, IOException, SQLException {
+		CorsistaBC cBC = new CorsistaBC();
+		cBC.removeByModel(model);
+	}
+	
+	public int getNCorsisti() throws ClassNotFoundException, IOException, SQLException {
+		CorsistaBC cBC = new CorsistaBC();
+		return cBC.getNCorsisti();
+	}
 }

@@ -20,10 +20,10 @@ public class CorsistaBC {
 		idGen = CorsistaIdGenerator.getInstance();
 	}
 
-	public void createFromModel(Corsista corsista) throws SQLException {
+	public void createFromModel(Corsista model) throws SQLException {
 		try {
-			corsista.setCodCorsista(idGen.getNextId());
-			CorsistaDAO.getFactory().createFromModel(conn, corsista);
+			model.setCodCorsista(idGen.getNextId());
+			CorsistaDAO.getFactory().createFromModel(conn, model);
 		} catch (SQLException sql) {
 			throw sql;
 		}
@@ -48,9 +48,9 @@ public class CorsistaBC {
 		return lc;
 	}
 
-	public void removeByModel(Corsista cors) throws SQLException {
+	public void removeByModel(Corsista model) throws SQLException {
 		try {
-			CorsistaDAO.getFactory().removeByModel(conn, cors);
+			CorsistaDAO.getFactory().removeByModel(conn, model);
 		} catch (SQLException sql) {
 			throw new SQLException(sql);
 		}
