@@ -3,14 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@include file="CDN.html" %>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<%@ include file="CDN.html" %>
 <meta charset="ISO-8859-1">
-<title>Pagina Login</title>
+<title>Login Page</title>
 </head>
 <body>
 <jsp:include page="nav.jsp"/>
-<div class="container">
+<div style="margin-top:100px;"class="container">
 <form action="/<%=application.getServletContextName()%>/loginAdminController" method="post"
 class="form-horizontal">
 
