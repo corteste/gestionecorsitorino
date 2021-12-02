@@ -25,18 +25,20 @@ public class CorsoCorsistaDAO extends CorsoCorsistaDAOAdapter implements DAOCost
 	}
 
 	@Override
-	public void createFromModel(Connection conn, CorsoCorsista model) throws SQLException{
+	public void createFromModel(Connection conn, CorsoCorsista model){
 		try {
 			ResultSet rs;
-			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			Statement stmt = conn.createStatement();
 			rs = stmt.executeQuery(SELECT__CORSO_CORSISTA);
 			rs.moveToInsertRow();
-			rs.updateLong(1, model.getCodCorso());
-			rs.updateLong(2, model.getCodCorsista());
+			rs.updateLong(1, model.getCodCorsista());
+			rs.updateLong(2, model.getCodCorso());
 			rs.insertRow();
+			rs.moveToCurrentRow();
 			conn.commit();
-		}  catch (SQLException exc) {
-			throw exc;
+		} catch(SQLException exc) {
+			exc.printStackTrace();
+			exc.getMessage();
 		}
 		
 	}

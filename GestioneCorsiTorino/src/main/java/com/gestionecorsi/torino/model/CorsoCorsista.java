@@ -1,19 +1,19 @@
 package com.gestionecorsi.torino.model;
 
 public class CorsoCorsista {
-	private long codCorso;
-	private long codCorsista;
+	private int codCorso;
+	private int codCorsista;
 	
-	public long getCodCorso() {
+	public int getCodCorso() {
 		return codCorso;
 	}
-	public void setCodCorso(long codCorso) {
+	public void setCodCorso(int codCorso) {
 		this.codCorso = codCorso;
 	}
-	public long getCodCorsista() {
+	public int getCodCorsista() {
 		return codCorsista;
 	}
-	public void setCodCorsista(long codCorsista) {
+	public void setCodCorsista(int codCorsista) {
 		this.codCorsista = codCorsista;
 	}
 	
@@ -22,4 +22,6 @@ public class CorsoCorsista {
 		return "CorsoCorsista [codCorso=" + codCorso + ", codCorsista=" + codCorsista + "]";
 	}
 	
+	
+
 }
