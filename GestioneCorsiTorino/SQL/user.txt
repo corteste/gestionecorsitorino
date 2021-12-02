@@ -1,0 +1,2 @@
+CREATE USER GestioneCorsi IDENTIFIED BY betacom;
+GRANT DBA TO GestioneCorsi;
