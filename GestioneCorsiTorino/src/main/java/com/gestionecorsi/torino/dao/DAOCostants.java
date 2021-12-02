@@ -40,6 +40,8 @@ public interface DAOCostants {
 			+ "FROM CORSO\r\n"
 			+ "WHERE DATA_INIZIO = (SELECT MAX(DATA_INIZIO)\r\n"
 			+ "                     FROM CORSO)";
+	public static final String SELECT_AVG_LENGTH = "SELECT  AVG((DATA_FINE-DATA_INIZIO) - (TO_NUMBER(TO_CHAR(DATA_FINE, 'IW'))-TO_NUMBER(TO_CHAR(DATA_INIZIO, 'IW')))*2 )\r\n"
+			+ "FROM CORSO";
 	public static final String SELECT_COMMENTI_CORSO ="SELECT NUMERO_COMMENTI\r\n"
 			+ "FROM CORSO_N_COMMENTI\r\n"
 			+ "WHERE COD_CORSO = ?";

@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
-import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import com.gestionecorsi.torino.dao.CorsoDAO;
@@ -17,7 +17,14 @@ import com.gestionecorsi.torino.idgen.CorsoIdGenerator;
 import com.gestionecorsi.torino.model.Corso;
 
 class CorsoDAOTest {
+
 	private static Corso c = new Corso();
+	private static Connection conn;
+	
+	@BeforeAll
+	static void init() throws ClassNotFoundException, IOException, SQLException {
+		conn =   DBAccess.getConnection();
+	}
 	@Test
 	void testCreateFromModel() {
 		
@@ -27,10 +34,10 @@ class CorsoDAOTest {
 		c.setCostoCorso(1000);
 		c.setCommenti("A;J;J;F;");
 		c.setAulaCorso("A1");
-		c.setCodDocente("AAA");
+		c.setCodDocente("DOC");
 		try {
 			c.setIdCorso(CorsoIdGenerator.getInstance().getNextId());
-			Connection conn = DBAccess.getConnection();
+			
 			CorsoDAO.getFactory().createFromModel(conn, c); 
 		} catch (ClassNotFoundException | IOException | SQLException e) {
 			// TODO Auto-generated catch block
@@ -38,31 +45,62 @@ class CorsoDAOTest {
 		}
 	}
 	@Test
-	void getAll() {
+	void testGetAll() {
 		try {
-			List<Corso> lc = CorsoDAO.getFactory().getAll(DBAccess.getConnection());
+			List<Corso> lc = CorsoDAO.getFactory().getAll(conn);
 			assertNotNull(lc);
 			assertFalse(lc.isEmpty());
-		} catch (ClassNotFoundException | SQLException | IOException e) {
+		} catch (SQLException  e) {
 			// TODO Auto-generated catch block
 			fail(e.getMessage());
 		} 
 	}
 	
 	@Test
-	void removeByModel() {
+	void testGetModelByNumericalId() throws SQLException {
+		
+		assertEquals("A", CorsoDAO.getFactory().getModelByNumericalId(conn, 1).getNomeCorso());
+	}
+
+	
+	@Test
+	void  testRemoveByModel() {
 		try {
-			CorsoDAO.getFactory().removeByModel(DBAccess.getConnection(), c);
-		} catch (ClassNotFoundException | SQLException | IOException e) {
+			CorsoDAO.getFactory().removeByModel(conn, c);
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			fail(e.getMessage());
 		} 
 	}
 	
+
+
 	
-	@AfterAll
-  static void clean() {
-		
+
+
+	@Test
+	void testGetPopularCorso() throws SQLException {
+		assertEquals("A",CorsoDAO.getFactory().getPopularCorso(conn));
+	}
+
+	@Test
+	void testGetDataLastCorso() throws SQLException {
+		assertEquals("Ultimo", CorsoDAO.getFactory().getDataLastCorso(conn).getNomeCorso());
+	}
+
+	@Test
+	void testGetCountCommenti() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testGetAvgLength() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testGetAvailableCorso() {
+		fail("Not yet implemented");
 	}
 
 }
