@@ -34,7 +34,7 @@ class CorsoDAOTest {
 		c.setCostoCorso(1000);
 		c.setCommenti("A;J;J;F;");
 		c.setAulaCorso("A1");
-		c.setCodDocente("DOC1");
+		c.setCodDocente("DOC");
 		try {
 			c.setIdCorso(CorsoIdGenerator.getInstance().getNextId());
 			
@@ -57,6 +57,13 @@ class CorsoDAOTest {
 	}
 	
 	@Test
+	void testGetModelByNumericalId() throws SQLException {
+		
+		assertEquals("A", CorsoDAO.getFactory().getModelByNumericalId(conn, 1).getNomeCorso());
+	}
+
+	
+	@Test
 	void  testRemoveByModel() {
 		try {
 			CorsoDAO.getFactory().removeByModel(conn, c);
@@ -67,38 +74,33 @@ class CorsoDAOTest {
 	}
 	
 
-	@Test
-	void testGetModelByNumericalId() throws SQLException {
-		
-		assertEquals(c, CorsoDAO.getFactory().getModelByNumericalId(conn, c.getIdCorso()));
-	}
 
 	
 
 
 	@Test
-	void testGetPopularCorso() {
-		
+	void testGetPopularCorso() throws SQLException {
+		assertEquals("A",CorsoDAO.getFactory().getPopularCorso(conn));
 	}
 
 	@Test
-	void testGetDataLastCorso() {
-		fail("Not yet implemented");
+	void testGetDataLastCorso() throws SQLException {
+		assertEquals("Ultimo", CorsoDAO.getFactory().getDataLastCorso(conn).getNomeCorso());
 	}
 
 	@Test
-	void testGetCountCommenti() {
-		fail("Not yet implemented");
+	void testGetCountCommenti() throws SQLException {
+		assertEquals(6,CorsoDAO.getFactory().getCountCommenti(conn, 1));
 	}
 
 	@Test
-	void testGetAvgLength() {
-		fail("Not yet implemented");
+	void testGetAvgLength() throws SQLException {
+		assertEquals(1,CorsoDAO.getFactory().getAvgLength(conn));
 	}
 
 	@Test
-	void testGetAvailableCorso() {
-		fail("Not yet implemented");
+	void testGetAvailableCorso() throws SQLException {
+		assertFalse(CorsoDAO.getFactory().getAvailableCorso(conn).isEmpty());
 	}
 
 }
