@@ -64,7 +64,6 @@ class="form-horizontal">
 </body>
 </html>
 <%}else
-{
+response.sendRedirect("limit.jsp");
 %>
-<%@ include file="limit.jsp" %>  
-<%}%>
+
