@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<%@ include file="CDN.html" %>
 <meta name="viewport" content="width = device-width , intial-scale = 1 ">
 <link rel="stylesheet" href="css/style.css">
 <meta charset="ISO-8859-1">
@@ -33,6 +33,5 @@
 		</div>
 		
 	</div>
-	<footer ><%@ include file= "footer.html" %></footer>
 </body>
 </html>
