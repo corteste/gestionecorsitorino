@@ -79,13 +79,13 @@ class CorsoDAOTest {
 
 
 	@Test
-	void testGetPopularCorso() {
-		
+	void testGetPopularCorso() throws SQLException {
+		assertEquals("A",CorsoDAO.getFactory().getPopularCorso(conn));
 	}
 
 	@Test
-	void testGetDataLastCorso() {
-		fail("Not yet implemented");
+	void testGetDataLastCorso() throws SQLException {
+		assertEquals("Ultimo", CorsoDAO.getFactory().getDataLastCorso(conn).getNomeCorso());
 	}
 
 	@Test

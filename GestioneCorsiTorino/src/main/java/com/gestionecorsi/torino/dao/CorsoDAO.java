@@ -130,7 +130,7 @@ public class CorsoDAO extends CorsoDAOAdapter  implements DAOCostants{
 		
 		if(rs.next()) {
 			c = new Corso ();
-			c.setNomeCorso(rs.getString(2));
+			c.setNomeCorso(rs.getString(1));
 		}
 		
 		return c.getNomeCorso();
