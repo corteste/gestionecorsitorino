@@ -18,7 +18,10 @@ if(tmp< 5){
 <body>
 <jsp:include page="nav.jsp"/>
 <div style="margin-top:100px;"class="container">
+<%if(tmp >0){ %>
+<p>Ricontrolla i dati</p>
 <p>Hai a disposizione <%=""+(5-(tmp))+"" %></p>
+<% }%>
 <form action="/<%=application.getServletContextName()%>/loginControl" method="POST"
 class="form-horizontal">
 
