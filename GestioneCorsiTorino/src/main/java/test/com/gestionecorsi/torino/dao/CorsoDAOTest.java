@@ -89,8 +89,8 @@ class CorsoDAOTest {
 	}
 
 	@Test
-	void testGetCountCommenti() {
-		fail("Not yet implemented");
+	void testGetCountCommenti() throws SQLException {
+		CorsoDAO.getFactory().getCountCommenti(conn, 1);
 	}
 
 	@Test
