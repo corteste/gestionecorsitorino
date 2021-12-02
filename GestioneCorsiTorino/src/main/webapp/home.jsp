@@ -1,4 +1,7 @@
-
+<%
+	String user = (String) session.getAttribute("username");
+	if (user != null) {
+%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -10,7 +13,7 @@
 </head>
 <body>
 <jsp:include page="nav.jsp"/>
-	<div class="container">
+	<div class="container" style="margin-top: 100px;">
 			<div class="page-header">
 				<h3>Home Page</h3>
 			</div>
@@ -22,3 +25,9 @@
 	</div>
 </body>
 </html>
+
+<%
+	} else {
+		response.sendRedirect("accessonegato.jsp");
+	}
+%>
