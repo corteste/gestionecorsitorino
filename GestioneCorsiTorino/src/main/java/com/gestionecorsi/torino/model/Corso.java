@@ -1,5 +1,6 @@
 package com.gestionecorsi.torino.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Corso {
@@ -60,4 +61,12 @@ public class Corso {
 	public void setCodDocente(String codDocente) {
 		this.codDocente = codDocente;
 	}
+	@Override
+	public String toString() {
+		return "Corso [idCorso=" + idCorso + ", nomeCorso=" + nomeCorso + ", dataInizio=" + new SimpleDateFormat("dd/MM/yyyy").format(dataInizio)   + ", dataFine="
+				+new SimpleDateFormat("dd/MM/yyyy").format(dataFine)  + ", costoCorso=" +String.format("%.2f",costoCorso )  + ", commenti=" + commenti + ", aulaCorso=" + aulaCorso
+				+ ", codDocente=" + codDocente + "";
+	}
+	
+	
 }

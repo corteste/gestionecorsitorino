@@ -89,18 +89,18 @@ class CorsoDAOTest {
 	}
 
 	@Test
-	void testGetCountCommenti() {
-		fail("Not yet implemented");
+	void testGetCountCommenti() throws SQLException {
+		assertEquals(6,CorsoDAO.getFactory().getCountCommenti(conn, 1));
 	}
 
 	@Test
-	void testGetAvgLength() {
-		fail("Not yet implemented");
+	void testGetAvgLength() throws SQLException {
+		assertEquals(1,CorsoDAO.getFactory().getAvgLength(conn));
 	}
 
 	@Test
-	void testGetAvailableCorso() {
-		fail("Not yet implemented");
+	void testGetAvailableCorso() throws SQLException {
+		assertFalse(CorsoDAO.getFactory().getAvailableCorso(conn).isEmpty());
 	}
 
 }
