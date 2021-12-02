@@ -1,12 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-<h1>sono la Navbar</h1>
-</body>
-</html>
+<nav class="navbar navbar-fixed-top navbar-inverse">
+
+		<div  class="navbar-header">
+			<button  type="button" data-toggle="collapse" class="navbar-toggle"
+				data-target="#menu">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.jsp">test3</a>
+		</div>
+</nav>

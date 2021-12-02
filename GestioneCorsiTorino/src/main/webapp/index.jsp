@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%@include file="CDN.html" %>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Pagina Login</title>
 </head>
 <body>
 <jsp:include page="nav.jsp"/>
@@ -21,10 +22,10 @@ class="form-horizontal">
 				<i class="glyphicon glyphicon-user"></i>
 			</span>
 			<input type="text" name="username"
-			placeholder="username" class="form-control" maxlength="10">	
+			placeholder="admin" class="form-control" maxlength="10">	
 		</div>
 	</div>
-	<div class="col-md-7 control-label" id="infoUsername"></div>
+	<div class="col-md-7 control-label" id="admin"></div>
 </div>
 
 <!--------------------------------------------- Password -->
@@ -52,6 +53,5 @@ class="form-horizontal">
 
 </form>
 </div>
-<footer><%@include file="footer.html"%></footer>
 </body>
 </html>
