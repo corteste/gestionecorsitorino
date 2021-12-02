@@ -13,7 +13,7 @@
 </head>
 <body>
 <jsp:include page="nav.jsp"/>
-	<div class="container">
+	<div class="container" style="margin-top: 100px;">
 			<div class="page-header">
 				<h3>Home Page</h3>
 			</div>
@@ -25,6 +25,7 @@
 	</div>
 </body>
 </html>
+
 <%
 	} else {
 		response.sendRedirect("accessonegato.jsp");

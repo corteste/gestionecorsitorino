@@ -25,7 +25,13 @@ public class DocenteBC {
 	
 	public Docente getByString(String codDocente) throws SQLException {
 		Docente docente = null;
-		docente = DocenteDAO.getFactory().getModelByString(conn, codDocente);
+		try {
+			docente = DocenteDAO.getFactory().getModelByString(conn, codDocente);
+		} catch (SQLException e) {
+			throw new SQLException();
+		} finally {
+			DBAccess.closeConnection();
+		}
 		return docente;
 	}
 	
@@ -36,6 +42,8 @@ public class DocenteBC {
 			docenti = DocenteDAO.getFactory().getAll(conn);
 		} catch(SQLException sql) {
 			throw new SQLException();
+		} finally {
+			DBAccess.closeConnection();
 		}	
 		return docenti;
 	}
@@ -46,15 +54,9 @@ public class DocenteBC {
 			codiceDocente = DocenteDAO.getFactory().getDocenteMostCorsi(conn);
 		} catch (SQLException e) {
 			throw new SQLException();
+		} finally {
+			DBAccess.closeConnection();
 		}
 		return codiceDocente;
-	}
-	
-	public void closeConnection() throws SQLException {
-		try {
-			DBAccess.closeConnection();
-		} catch (SQLException sql) {
-			throw sql;
-		}
 	}
 }
