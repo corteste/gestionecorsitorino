@@ -20,7 +20,7 @@ class="form-horizontal">
 			<span class="input-group-addon">
 				<i class="glyphicon glyphicon-user"></i>
 			</span>
-			<input type="text" name="username"
+			<input type="text" id ="username" name="username"
 			placeholder="admin" class="form-control" maxlength="10">	
 		</div>
 	</div>
@@ -35,7 +35,7 @@ class="form-horizontal">
 			<span class="input-group-addon">
 				<i class="glyphicon glyphicon-lock"></i>
 			</span>
-			<input type="password" name="password"
+			<input type="password" id ="password" name="password"
 			placeholder="Password..." class="form-control" maxlength="20">	
 		</div>
 	</div>

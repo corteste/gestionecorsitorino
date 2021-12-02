@@ -30,7 +30,7 @@ public class LoginAdminController extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String admin=request.getParameter("admin");
+		String admin=request.getParameter("username");
 		String password=request.getParameter("password");
 		HttpSession session=request.getSession();
 		String adminpass;
