@@ -10,7 +10,7 @@
 <body>
 <jsp:include page="nav.jsp"/>
 <div style="margin-top:100px;"class="container">
-<form action="/<%=application.getServletContextName()%>/loginAdminController" method="post"
+<form action="/<%=application.getServletContextName()%>/loginControl" method="POST"
 class="form-horizontal">
 
 <!--------------------------------------------- Username -->
@@ -20,7 +20,7 @@ class="form-horizontal">
 			<span class="input-group-addon">
 				<i class="glyphicon glyphicon-user"></i>
 			</span>
-			<input type="text" name="username"
+			<input type="text" id ="username" name="username"
 			placeholder="admin" class="form-control" maxlength="10">	
 		</div>
 	</div>
@@ -35,7 +35,7 @@ class="form-horizontal">
 			<span class="input-group-addon">
 				<i class="glyphicon glyphicon-lock"></i>
 			</span>
-			<input type="password" name="password"
+			<input type="password" id ="password" name="password"
 			placeholder="Password..." class="form-control" maxlength="20">	
 		</div>
 	</div>
@@ -44,7 +44,7 @@ class="form-horizontal">
 
 <div class="row">
 	<div class="col-md-2">
-		<button type="button" class="btn btn-info">
+		<button type="submit" class="btn btn-info">
 			Login&nbsp;<span class="glyphicon glyphicon-log-in"></span>
 		</button>
 	</div>

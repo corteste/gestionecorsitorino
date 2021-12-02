@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +16,7 @@ import com.gestionecorsi.torino.utilities.LoginControl;
 /**
  * Servlet implementation class loginAdminController
  */
-@WebServlet("/loginAdminController")
+
 public class LoginAdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -31,18 +30,18 @@ public class LoginAdminController extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String admin=request.getParameter("admin");
+		String admin=request.getParameter("username");
 		String password=request.getParameter("password");
 		HttpSession session=request.getSession();
-		String adminpass;
+		String username;
 		if (admin != null && password != null) {
 			try {
 				LoginControl lc = new LoginControl();
-				adminpass = lc.getAdminPass(admin);
-				if (adminpass != null) {
-					if (adminpass.equals(password)) {
+				username = lc.getAdminPass(password);
+				if (username != null) {
+					if (username.equals(admin)) {
 						session.setAttribute("admin", admin);
-						response.sendRedirect("form.jsp");						
+						response.sendRedirect("home.jsp");						
 					} else {
 						response.sendRedirect("accessonegato.jsp");
 					}
