@@ -170,6 +170,16 @@ public class CorsoDAO extends CorsoDAOAdapter  implements DAOCostants{
 		}
 		return count;
 	}
+	
+	public double getAvgLength(Connection conn) throws SQLException {
+		double d = -1;
+		Statement st = conn.createStatement();
+		ResultSet rs = st.executeQuery(SELECT_AVG_LENGTH);
+		if(rs.next())
+			d = rs.getDouble(1);
+		
+		return d;
+	}
 
 
 
