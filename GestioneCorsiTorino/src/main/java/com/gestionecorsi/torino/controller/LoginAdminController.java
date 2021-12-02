@@ -30,11 +30,12 @@ public class LoginAdminController extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int tmp = -1;
 		String admin=request.getParameter("username");
 		String password=request.getParameter("password");
 		HttpSession session=request.getSession();
 		String username;
-		if (admin != null && password != null) {
+		if ((!admin.equals("")) && (!password.equals(""))) { //CREDO NON POSSANO ESSERE NULLI
 			try {
 				LoginControl lc = new LoginControl();
 				username = lc.getAdminPass(password);
@@ -43,10 +44,22 @@ public class LoginAdminController extends HttpServlet {
 						session.setAttribute("admin", admin);
 						response.sendRedirect("home.jsp");						
 					} else {
-						response.sendRedirect("accessonegato.jsp");
+						if(session.getAttribute("attempt") == null)
+							session.setAttribute("attempt", 1);
+							else{
+							tmp =(Integer) session.getAttribute("attempt");
+							session.setAttribute("attempt",++tmp );
+							}
+						response.sendRedirect("index.jsp");
 					}
 				}else {
-					response.sendRedirect("accessonegato.jsp");
+					if(session.getAttribute("attempt") == null)
+						session.setAttribute("attempt", 1);
+						else{
+						tmp =(Integer) session.getAttribute("attempt");
+						session.setAttribute("attempt",++tmp );
+						}
+					response.sendRedirect("index.jsp");
 				}
 			} catch (ClassNotFoundException | IOException | SQLException e) {
 				// TODO Auto-generated catch block
@@ -54,7 +67,7 @@ public class LoginAdminController extends HttpServlet {
 			}
 			
 		}else {
-			response.sendRedirect("accessonegato.jsp");
+			response.sendRedirect("index.jsp");
 			//
 		}
 	}
