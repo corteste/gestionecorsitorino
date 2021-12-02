@@ -40,7 +40,9 @@ public interface DAOCostants {
 			+ "FROM CORSO\r\n"
 			+ "WHERE DATA_INIZIO = (SELECT MAX(DATA_INIZIO)\r\n"
 			+ "                     FROM CORSO)";
-	
+	public static final String SELECT_COMMENTI_CORSO ="SELECT NUMERO_COMMENTI\r\n"
+			+ "FROM CORSO_N_COMMENTI\r\n"
+			+ "WHERE COD_CORSO = ?";
 	public static final String SELECT_GET_AVAILABLE_CORSO  ="SELECT CORSO.* ,POSTI_DISPONIBILI\r\n"
 			+ "FROM CORSO,CORSO_POSTI_DISPONIBILI\r\n"
 			+ "WHERE CORSO.COD_CORSO = CORSO_POSTI_DISPONIBILI.COD_CORSO\r\n";
@@ -54,8 +56,6 @@ public interface DAOCostants {
 			+ "                        FROM DOCENTE_CV "
 			+ "                        GROUP BY COD_DOCENTE "
 			+ ")";
-	public static final String SELECT_AVG_DATA_LENGH = "SELECT  AVG((DATA_FINE-DATA_INIZIO) - (TO_NUMBER(TO_CHAR(DATA_FINE, 'IW'))-TO_NUMBER(TO_CHAR(DATA_INIZIO, 'IW')))*2 )\r\n"
-			+ "FROM CORSO";
 	
 	//END
 	
