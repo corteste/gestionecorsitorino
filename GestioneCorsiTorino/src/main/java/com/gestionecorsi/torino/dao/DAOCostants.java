@@ -56,6 +56,8 @@ public interface DAOCostants {
 			+ "                        FROM DOCENTE_CV "
 			+ "                        GROUP BY COD_DOCENTE "
 			+ ")";
+	public static final String SELECT_AVG_DATA_LENGH = "SELECT  AVG((DATA_FINE-DATA_INIZIO) - (TO_NUMBER(TO_CHAR(DATA_FINE, 'IW'))-TO_NUMBER(TO_CHAR(DATA_INIZIO, 'IW')))*2 )\r\n"
+			+ "FROM CORSO";
 	
 	//END
 	
