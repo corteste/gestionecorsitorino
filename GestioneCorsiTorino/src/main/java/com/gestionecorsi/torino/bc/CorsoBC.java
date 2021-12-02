@@ -61,4 +61,8 @@ public class CorsoBC {
 	public List<String> getAvailableCorso() throws SQLException {
 		return CorsoDAO.getFactory().getAvailableCorso(conn);
 	}
+	
+	public double getAvgLength () throws SQLException {
+		return CorsoDAO.getFactory().getAvgLenght(conn);
+	}
 }
