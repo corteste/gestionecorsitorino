@@ -18,13 +18,13 @@ import com.gestionecorsi.torino.utilities.LoginControl;
  * Servlet implementation class loginAdminController
  */
 @WebServlet("/loginAdminController")
-public class loginAdminController extends HttpServlet {
+public class LoginAdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public loginAdminController() {
+    public LoginAdminController() {
         super();
         // TODO Auto-generated constructor stub
     }
