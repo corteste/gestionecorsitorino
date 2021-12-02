@@ -21,10 +21,10 @@ class="form-horizontal">
 				<i class="glyphicon glyphicon-user"></i>
 			</span>
 			<input type="text" name="username"
-			placeholder="username" class="form-control" maxlength="10">	
+			placeholder="admin" class="form-control" maxlength="10">	
 		</div>
 	</div>
-	<div class="col-md-7 control-label" id="infoUsername"></div>
+	<div class="col-md-7 control-label" id="admin"></div>
 </div>
 
 <!--------------------------------------------- Password -->

@@ -49,7 +49,7 @@ public class CorsoDAO extends CorsoDAOAdapter  implements DAOCostants{
 		PreparedStatement ps = conn.prepareStatement(SELECT_CORSO_BY_ID);
 		ps.setLong(1, id);
 		ResultSet rs = ps.executeQuery();
-		rs.next();
+		if(rs.next()) {
 		tmp.setIdCorso(rs.getLong(1));
 		tmp.setNomeCorso(rs.getString(2));
 		tmp.setDataInizio(new java.util.Date(rs.getDate(3).getTime()));
@@ -58,6 +58,7 @@ public class CorsoDAO extends CorsoDAOAdapter  implements DAOCostants{
 		tmp.setCommenti(rs.getString(6));
 		tmp.setAulaCorso(rs.getString(7));
 		tmp.setCodDocente(rs.getString(8));
+		}
 		
 		return tmp;
 		
@@ -162,12 +163,21 @@ public class CorsoDAO extends CorsoDAOAdapter  implements DAOCostants{
 
 
 	public int getCountCommenti(Connection conn, long id)throws SQLException {
-		
 		int count = 0;
-		for(Corso c : getAll(conn)) {
+		if(id <= 0) { // tutti i commenti nel db prensenti
+		
+		for(Corso c : getAll(conn)) 
 			count=c.getCommenti().split(";").length+count;
-		}
+		
 		return count;
+		}
+		else
+		{
+			Corso tmp = new Corso();
+			tmp  = getModelByNumericalId(conn, id);
+			return tmp.getCommenti().split(";").length;
+		}
+			
 	}
 	
 	public double getAvgLength(Connection conn) throws SQLException {
