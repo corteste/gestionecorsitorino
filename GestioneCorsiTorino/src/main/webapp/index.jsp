@@ -10,7 +10,7 @@
 <body>
 <jsp:include page="nav.jsp"/>
 <div class="container">
-<form action="/<%=application.getServletContextName()%>/login" method="post"
+<form action="/<%=application.getServletContextName()%>/loginAdminController" method="post"
 class="form-horizontal">
 
 <!--------------------------------------------- Username -->
