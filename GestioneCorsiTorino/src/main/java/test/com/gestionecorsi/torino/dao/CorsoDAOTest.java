@@ -34,7 +34,7 @@ class CorsoDAOTest {
 		c.setCostoCorso(1000);
 		c.setCommenti("A;J;J;F;");
 		c.setAulaCorso("A1");
-		c.setCodDocente("DOC1");
+		c.setCodDocente("DOC");
 		try {
 			c.setIdCorso(CorsoIdGenerator.getInstance().getNextId());
 			
@@ -57,6 +57,13 @@ class CorsoDAOTest {
 	}
 	
 	@Test
+	void testGetModelByNumericalId() throws SQLException {
+		
+		assertEquals("A", CorsoDAO.getFactory().getModelByNumericalId(conn, 1).getNomeCorso());
+	}
+
+	
+	@Test
 	void  testRemoveByModel() {
 		try {
 			CorsoDAO.getFactory().removeByModel(conn, c);
@@ -67,11 +74,6 @@ class CorsoDAOTest {
 	}
 	
 
-	@Test
-	void testGetModelByNumericalId() throws SQLException {
-		
-		assertEquals(c, CorsoDAO.getFactory().getModelByNumericalId(conn, c.getIdCorso()));
-	}
 
 	
 
