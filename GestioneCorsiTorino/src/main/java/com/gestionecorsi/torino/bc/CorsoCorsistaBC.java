@@ -1,15 +1,20 @@
 package com.gestionecorsi.torino.bc;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
 
 import com.gestionecorsi.torino.dao.CorsoCorsistaDAO;
+import com.gestionecorsi.torino.dbaccess.DBAccess;
 import com.gestionecorsi.torino.model.CorsoCorsista;
 
 public class CorsoCorsistaBC {
 	private Connection conn;
 	
+	public CorsoCorsistaBC() throws ClassNotFoundException, IOException, SQLException {
+		conn = DBAccess.getConnection();
+	}
 	
 	public void createFromModel(CorsoCorsista corsocorsista) 
 			throws SQLException {
