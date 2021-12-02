@@ -33,15 +33,15 @@ public class LoginAdminController extends HttpServlet {
 		String admin=request.getParameter("username");
 		String password=request.getParameter("password");
 		HttpSession session=request.getSession();
-		String adminpass;
+		String username;
 		if (admin != null && password != null) {
 			try {
 				LoginControl lc = new LoginControl();
-				adminpass = lc.getAdminPass(admin);
-				if (adminpass != null) {
-					if (adminpass.equals(password)) {
+				username = lc.getAdminPass(password);
+				if (username != null) {
+					if (username.equals(admin)) {
 						session.setAttribute("admin", admin);
-						response.sendRedirect("form.jsp");						
+						response.sendRedirect("home.jsp");						
 					} else {
 						response.sendRedirect("accessonegato.jsp");
 					}

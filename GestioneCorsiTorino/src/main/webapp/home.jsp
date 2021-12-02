@@ -1,5 +1,5 @@
 <%
-	String user = (String) session.getAttribute("username");
+	String user = (String) session.getAttribute("admin");
 	if (user != null) {
 %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
