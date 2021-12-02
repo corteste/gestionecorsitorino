@@ -10,7 +10,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import com.gestionecorsi.torino.bc.CorsoBC;
-import com.gestionecorsi.torino.dao.CorsoDAO;
 import com.gestionecorsi.torino.model.Corso;
 
 class CorsoBCTest {
@@ -62,27 +61,53 @@ class CorsoBCTest {
 
 	@Test
 	void testGetAll() {
-		fail("Not yet implemented");
+		try {
+			assertFalse(cbc.getAll().isEmpty());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			fail(e.getMessage());
+		}
 	}
 
 	@Test
 	void testGetPopularCorso() {
-		fail("Not yet implemented");
+		try {
+			assertEquals("A",cbc.getPopularCorso());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			fail(e.getMessage());
+		}
 	}
 
 	@Test
 	void testGetDataLastCorso() {
-		fail("Not yet implemented");
+		try {
+			assertEquals(21,cbc.getDataLastCorso().getIdCorso());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			fail(e.getMessage());
+		}
 	}
 
 	@Test
 	void testGetCountCommenti() {
-		fail("Not yet implemented");
+		try {
+			assertEquals(14, cbc.getCountCommenti(0));
+			assertEquals(3, cbc.getCountCommenti(1));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			fail(e.getMessage());
+		}
 	}
 
 	@Test
 	void testGetAvailableCorso() {
-		fail("Not yet implemented");
+		try {
+			assertFalse(cbc.getAll().isEmpty());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			fail(e.getMessage());
+		}
 	}
 
 }
