@@ -46,9 +46,4 @@ class CorsoBCTest {
 		fail("Not yet implemented");
 	}
 
-	@Test
-	void testGetAvgLength() {
-		fail("Not yet implemented");
-	}
-
 }

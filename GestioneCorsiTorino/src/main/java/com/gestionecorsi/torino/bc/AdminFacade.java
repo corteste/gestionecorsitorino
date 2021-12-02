@@ -91,22 +91,5 @@ public class AdminFacade {
 		return cBC.getCountCommenti(id);
 	}
 	
-	public void createCorsoFromModel(Corso c) {
-		
-	}
-	public Corso getCorsoByNumericalId(long id ) {
-		return null;
-	}
-	
-	public void removeCorso(Corso c) {
-		
-	}
-	
-	public List<Corso> getAllCorsi(){
-		return null;
-	}
-	
-	
-	
 	
 }
