@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<%@ include file="CDN.html" %>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Login Page</title>
 </head>
 <body>
 <jsp:include page="nav.jsp"/>
@@ -52,6 +52,5 @@ class="form-horizontal">
 
 </form>
 </div>
-<footer><%@include file="footer.html"%></footer>
 </body>
 </html>
