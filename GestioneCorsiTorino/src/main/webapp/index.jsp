@@ -9,7 +9,7 @@
 </head>
 <body>
 <jsp:include page="nav.jsp"/>
-<div class="container">
+<div style="margin-top:100px;"class="container">
 <form action="/<%=application.getServletContextName()%>/loginAdminController" method="post"
 class="form-horizontal">
 
