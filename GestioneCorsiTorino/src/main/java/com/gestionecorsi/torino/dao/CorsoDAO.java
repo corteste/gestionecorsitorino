@@ -163,12 +163,10 @@ public class CorsoDAO extends CorsoDAOAdapter  implements DAOCostants{
 
 
 	public int getCountCommenti(Connection conn, long id)throws SQLException {
-		PreparedStatement ps = conn.prepareStatement(SELECT_COMMENTI_CORSO);
-		ps.setLong(1, id);
-		ResultSet rs = ps.executeQuery();
+		
 		int count = 0;
-		for(;rs.next();) {
-			count=rs.getInt(1);
+		for(Corso c : getAll(conn)) {
+			count=c.getCommenti().split(";").length+count;
 		}
 		return count;
 	}
