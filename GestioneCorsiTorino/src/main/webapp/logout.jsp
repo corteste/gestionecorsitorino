@@ -3,6 +3,9 @@
 	String admin = (String)session.getAttribute("password");
 	if(user != null || admin != null) {
 		session.invalidate();
+		Cookie adminCookie = new Cookie("admin", "");
+		adminCookie.setMaxAge(0);
+		response.addCookie(adminCookie);
 %>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
