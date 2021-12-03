@@ -85,6 +85,9 @@
 		</div>
 		
 <p>Nuovo dato inserito</p>
+<%if(session.getAttribute("newcorso")!= null) {
+Corso a =(Corso) session.getAttribute("newcorso");
+%>
 <div class="table-responsive">
 <table class="table table-hover">
 	<thead>
@@ -102,8 +105,26 @@
 
 					</tr>
 				</thead>
+				<tbody>
+				<tr>
+					<td><%=a.getIdCorso() %></td>
+					<td><%=a.getNomeCorso() %></td>
+					<td><%=new SimpleDateFormat("dd/MM/yyyy").format(a.getDataInizio()) %></td>
+					<td><%=new SimpleDateFormat("dd/MM/yyyy").format(a.getDataFine()) %></td>
+					<td><%=String.format("%.2f",a.getCostoCorso()) %></td>
+					<td><%=a.getCommenti() %></td>
+					<td><%=a.getAulaCorso() %></td>
+					<td><%=a.getCodDocente() %></td>
+				
+				</tbody>
 </table>
 </div>
+<%session.removeAttribute("newcorso");}else
+	if(session.getAttribute("newcorso")!= null){
+%>
+
+
+<%} %>
 
 </div>
 
