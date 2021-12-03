@@ -83,6 +83,28 @@
 			<button   data-toggle="modal" data-target="#creaCorso" class="btn btn-primary btn-xs">Crea nuovo corso</button>
 
 		</div>
+		
+<p>Nuovo dato inserito</p>
+<div class="table-responsive">
+<table class="table table-hover">
+	<thead>
+					<tr>
+						<th>Cod Corso</th>
+						<th>Nome Corso</th>
+						<th>Data Inizio</th>
+						<th>Data Fine</th>
+						<th>Costo</th>
+						<th>Commenti</th>
+						<th>Aula</th>
+						<th>Cod Docente</th>
+						<th>Aggiungi corsista</th>
+						
+
+					</tr>
+				</thead>
+</table>
+</div>
+
 </div>
 
 </body>

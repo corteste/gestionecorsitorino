@@ -37,7 +37,7 @@ public class CreateCorso extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//HttpSession hs = r
+		HttpSession hs = request.getSession();
 		String nome = request.getParameter("nomecorso") ,dataInizio = request.getParameter("datainizio") ,dataFine = request.getParameter("datafine"),
 		costo = request.getParameter("prezzo") ,commento = request.getParameter("commento"), aula = request.getParameter("aula"), docente = request.getParameter("docente");
 		
@@ -63,7 +63,7 @@ public class CreateCorso extends HttpServlet {
 			if(cbc.isValidCorso(c))
 			{
 				cbc.createFromModel(c);
-				
+				hs.setAttribute("newcorso", c);
 				response.sendRedirect("inseriscicorsista.jsp");
 				
 			}
