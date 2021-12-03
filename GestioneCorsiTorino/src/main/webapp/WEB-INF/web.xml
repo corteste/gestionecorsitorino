@@ -34,7 +34,7 @@
   
    <error-page>
         <error-code>404</error-code>
-        <location>/accessonegato.jsp</location>
+        <location>/error404.jsp</location>
     </error-page>
     
     <error-page>
