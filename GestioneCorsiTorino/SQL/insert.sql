@@ -18,4 +18,3 @@ INSERT INTO CORSISTA VALUES(corsista_seq.nextval,'Mickey','Mouse','S');
 INSERT INTO CORSISTA VALUES(corsista_seq.nextval,'Duffy','Duck','N');
 INSERT INTO CORSISTA VALUES(corsista_seq.nextval,'Paperon','De Paperoni','S');
 INSERT INTO CORSISTA VALUES(corsista_seq.nextval,'Pippo','Pluto','S');
-INSERT INTO CORSISTA VALUES(corsista_seq.nextval,'Gianni','Neri','S');
