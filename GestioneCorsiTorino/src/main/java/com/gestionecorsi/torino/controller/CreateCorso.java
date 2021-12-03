@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.gestionecorsi.torino.bc.CorsoBC;
 import com.gestionecorsi.torino.exception.InvalidCorsoException;
@@ -36,6 +37,7 @@ public class CreateCorso extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		//HttpSession hs = r
 		String nome = request.getParameter("nomecorso") ,dataInizio = request.getParameter("datainizio") ,dataFine = request.getParameter("datafine"),
 		costo = request.getParameter("prezzo") ,commento = request.getParameter("commento"), aula = request.getParameter("aula"), docente = request.getParameter("docente");
 		
@@ -48,7 +50,11 @@ public class CreateCorso extends HttpServlet {
 			// TODO Auto-generated catch block
 			throw new ServletException(e);
 		}
+		if(costo.length() != 0)
+			if(costo.matches("([0-9]*\\.[0-9]+|[0-9]+)"))
 		c.setCostoCorso(Double.parseDouble(costo));
+		else
+			c.setCostoCorso(0.0);
 		c.setCommenti(commento+";");
 		c.setAulaCorso(aula);
 		c.setCodDocente(docente);
@@ -57,6 +63,7 @@ public class CreateCorso extends HttpServlet {
 			if(cbc.isValidCorso(c))
 			{
 				cbc.createFromModel(c);
+				
 				response.sendRedirect("inseriscicorsista.jsp");
 				
 			}

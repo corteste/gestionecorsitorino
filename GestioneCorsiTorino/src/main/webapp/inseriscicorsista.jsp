@@ -134,7 +134,7 @@
 					</div>
 					<div class="form-group">
 						<label for="docente">Ricerca docente</label> <input type="text" id="docente"
-							name="docente" class="form-control" placeholder="Inserisci Nome o cod docente">
+							name="docente" class="form-control" placeholder="Inserisci cod docente...">
 					</div>
 				
 				</div>
