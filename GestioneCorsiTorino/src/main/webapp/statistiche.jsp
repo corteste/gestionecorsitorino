@@ -19,8 +19,10 @@
 <body>
 <jsp:include page="nav.jsp"/>
 	<%
-		String mostCorsi = AdminFacade.getInstance().getDocenteMostCorsi();
-		Docente docente = AdminFacade.getInstance().getDocenteByString(mostCorsi);
+		AdminFacade aF = AdminFacade.getInstance();
+		String mostCorsi = aF.getDocenteMostCorsi();
+		Docente docente = aF.getDocenteByString(mostCorsi);
+		int nCorsisti = aF.getNCorsisti();
 	%>
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="margin-top: 100px;">
@@ -34,7 +36,7 @@
     </div>
     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
-        Contenuto statistica qui
+        <%= nCorsisti %>
       </div>
     </div>
   </div>
@@ -116,21 +118,20 @@
 					</thead>
 					<tbody>
 						<%
-							List<CorsoCorsista> corsoCorsisti = AdminFacade.getInstance().getCorsoCorsisti();
+							List<Corsista> corsisti = AdminFacade.getInstance().getCorsisti();
 						
-							for(CorsoCorsista cc : corsoCorsisti) {
-								Corsista corsista = AdminFacade.getInstance().getCorsistaById(cc.getCodCorsista());
-								
+							for(Corsista c : corsisti) {
+																
 						%>
 						<tr>
-							<td><%= corsista.getCodCorsista()%></td>
-							<td><%= corsista.getNomeCorsista() %></td>
-							<td><%= corsista.getCognomeCorsista() %></td>
+							<td><%= c.getCodCorsista()%></td>
+							<td><%= c.getNomeCorsista() %></td>
+							<td><%= c.getCognomeCorsista() %></td>
 							<td><button type="button" class="btn btn-info" 
-								data-toggle="modal" data-target="#gestisciArticoloModal_<%=cc.getCodCorsista()%>">Riepilogo
+								data-toggle="modal" data-target="#gestisciArticoloModal_<%=c.getCodCorsista()%>">Riepilogo
 								</button></td>
 							<td><jsp:include page="corsiCorsistaModal.jsp">
-									<jsp:param value="<%=cc.getCodCorsista()%>" name="id" />
+									<jsp:param value="<%=c.getCodCorsista()%>" name="id" />
 								</jsp:include></td>
 						</tr>
 						<% 

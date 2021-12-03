@@ -31,7 +31,7 @@ if(tmp< 5){
 <div style="margin-top:100px;"class="container">
 <%if(tmp >0){ %>
 <p>Ricontrolla i dati</p>
-<p>Hai a disposizione <%=""+(5-(tmp))+"" %></p>
+<p>Hai a disposizione <%=""+(5-(tmp))+"" %> tentativi</p>
 <% }%>
 <form action="/<%=application.getServletContextName()%>/loginControl" method="POST"
 class="form-horizontal">
