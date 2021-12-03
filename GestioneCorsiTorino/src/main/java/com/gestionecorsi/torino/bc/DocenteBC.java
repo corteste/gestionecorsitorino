@@ -26,8 +26,13 @@ public class DocenteBC {
 	public Docente getByString(String codDocente) throws SQLException {
 		Docente docente = null;
 		try {
+			//C'E' UN PROBLEMA NEL CONTROLLO DEL DOCENTE (NEL MODAL)
+			//A CASO LANCIA ECCEZIONE  (RANDOM) SE RICHIAMO IL METODO (CLASSE CORSO BC METODO CHECK_VALID_DOCENTE)
+			//PROBABILE FIX
+			if(conn.isClosed()) //RIAPRO CONNESSIONE NEL CASO QUALCHE ALTRO BC L'HA CHIUSA 
+				DBAccess.getConnection();	
 			docente = DocenteDAO.getFactory().getModelByString(conn, codDocente);
-		} catch (SQLException e) {
+		} catch (SQLException | ClassNotFoundException | IOException e) {
 			throw new SQLException();
 		} finally {
 			DBAccess.closeConnection();
