@@ -1,3 +1,4 @@
+<%@page import="com.gestionecorsi.torino.model.CorsoCorsista"%>
 <%@page import="com.gestionecorsi.torino.model.Corsista"%>
 <%@page import="java.util.List"%>
 <%@page import="com.gestionecorsi.torino.bc.AdminFacade"%>
@@ -40,7 +41,7 @@
 				<tbody>
 					<%
 					
-					List<Corsista>la = AdminFacade.getInstance().getCorsisti();
+					List<CorsoCorsista>la = AdminFacade.getInstance().getCorsoCorsisti();
 					if(la == null)
 					{
 					%>
@@ -54,11 +55,11 @@
 					}else{
 					%>
 					<%	
-					for (Corsista c : la) {
-						
+					for (CorsoCorsista cc : la) {
+						Corsista c = AdminFacade.getInstance().getCorsistaById(cc.getCodCorsista());
 					%>
 					<tr>
-
+						
 						<td><%=c.getCodCorsista()%></td>
 						<td><%=c.getNomeCorsista()%></td>
 						<td><%=c.getCognomeCorsista()%></td>

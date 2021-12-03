@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.gestionecorsi.torino.model.Corsista;
 import com.gestionecorsi.torino.model.Corso;
+import com.gestionecorsi.torino.model.CorsoCorsista;
 import com.gestionecorsi.torino.model.Docente;
 
 public class AdminFacade {
@@ -126,5 +127,8 @@ public class AdminFacade {
 	public int getNCorsisti() throws ClassNotFoundException, IOException, SQLException {
 		CorsistaBC cBC = new CorsistaBC();
 		return cBC.getNCorsisti();
+	}
+	public List<CorsoCorsista> getCorsoCorsisti() throws ClassNotFoundException, SQLException, IOException{
+		return new CorsoCorsistaBC().getCorsoCorsisti();
 	}
 }

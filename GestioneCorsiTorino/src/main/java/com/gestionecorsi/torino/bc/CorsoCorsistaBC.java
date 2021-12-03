@@ -3,7 +3,7 @@ package com.gestionecorsi.torino.bc;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
-
+import java.util.List;
 
 import com.gestionecorsi.torino.dao.CorsoCorsistaDAO;
 import com.gestionecorsi.torino.dbaccess.DBAccess;
@@ -28,6 +28,11 @@ public class CorsoCorsistaBC {
 		}catch (SQLException sql) {
 			throw new SQLException(sql);
 		}
+	}
+	
+	public List<CorsoCorsista> getCorsoCorsisti() throws SQLException{
+		
+		return CorsoCorsistaDAO.getFactory().getAll(conn);
 	}
 
 }
