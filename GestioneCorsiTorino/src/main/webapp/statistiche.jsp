@@ -116,7 +116,7 @@
     </div>
     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
       	<div class="panel-body">
-      <%= AdminFacade.getInstance().getAvgLength() %>
+      <%= (int) AdminFacade.getInstance().getAvgLength() %>
    		</div>
     </div>
   </div>
