@@ -43,9 +43,9 @@ public interface DAOCostants {
 	public static final String SELECT_AVG_LENGTH = "SELECT  AVG((DATA_FINE-DATA_INIZIO) - (TO_NUMBER(TO_CHAR(DATA_FINE, 'IW'))-TO_NUMBER(TO_CHAR(DATA_INIZIO, 'IW')))*2 )\r\n"
 			+ "FROM CORSO";
 
-	public static final String SELECT_GET_AVAILABLE_CORSO  ="SELECT CORSO.* ,POSTI_DISPONIBILI\r\n"
-			+ "FROM CORSO,CORSO_POSTI_DISPONIBILI\r\n"
-			+ "WHERE CORSO.COD_CORSO = CORSO_POSTI_DISPONIBILI.COD_CORSO\r\n";
+	public static final String SELECT_GET_AVAILABLE_CORSO  ="SELECT DISTINCT C.* \r\n"
+			+ "FROM CORSO C ,corso_posti_disponibili CP \r\n"
+			+ "WHERE C.COD_CORSO = CP.COD_CORSO OR C.COD_CORSO NOT IN(SELECT COD_CORSO FROM CORSO_CORSISTA )";
 	public static final String SELECT_N_CORSISTI = "select count(*) from corsista";
 		
 	
