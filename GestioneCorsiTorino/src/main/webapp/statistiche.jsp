@@ -48,7 +48,7 @@
     </div>
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
       	<div class="panel-body">
-      Contenuto statistica qui
+      <%=AdminFacade.getInstance().getPopularCorso() %>
    		</div>
     </div>
   </div>
@@ -90,7 +90,7 @@
     </div>
     <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
       	<div class="panel-body">
-      Contenuto statistica qui
+      <%=AdminFacade.getInstance().getCountCommenti(-1) %>
    		</div>
     </div>
   </div>
@@ -166,7 +166,10 @@
     </div>
     <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
       	<div class="panel-body">
-      Contenuto statistica qui
+      <%for(String s : AdminFacade.getInstance().getAvailableCorso()){ %><!-- Conviene fare una lista di corsi e stamparlo a tabella -->
+  		<%=s %> 	
+  		<br>	
+   		<%} %>
    		</div>
     </div>
   </div>
