@@ -1,3 +1,5 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="com.gestionecorsi.torino.model.Corso"%>
 <%@page import="com.gestionecorsi.torino.model.Corsista"%>
 <%@page import="java.util.List"%>
 <%@page import="com.gestionecorsi.torino.model.CorsoCorsista"%>
@@ -62,7 +64,43 @@
     </div>
     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-      	Contenuto statistica qui  
+      	<%Corso a = AdminFacade.getInstance().getDataLastCorso(); %>
+      		<div class="table-responsive">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Cod Corso</th>
+						<th>Nome Corso</th>
+						<th>Data Inizio</th>
+						<th>Data Fine</th>
+						<th>Costo</th>
+						<th>Commenti</th>
+						<th>Aula</th>
+						<th>Cod Docente</th>
+						
+
+					</tr>
+				</thead>
+				<tbody>
+				
+					<tr>
+					<td><%=a.getIdCorso() %></td>
+					<td><%=a.getNomeCorso() %></td>
+					<td><%=new SimpleDateFormat("dd/MM/yyyy").format(a.getDataInizio()) %></td>
+					<td><%=new SimpleDateFormat("dd/MM/yyyy").format(a.getDataFine()) %></td>
+					<td><%=String.format("%.2f",a.getCostoCorso()) %></td>
+					<td><%=a.getCommenti() %></td>
+					<td><%=a.getAulaCorso() %></td>
+					<td><%=a.getCodDocente() %></td>
+                    </tr>
+				
+
+				</tbody>
+
+			</table>
+
+		</div>
+      	
       </div>
     </div>
   </div>
