@@ -122,13 +122,15 @@ public class CorsoBC {
 	private boolean checkValidDurataCorso(Date dataInizio, Date dataFine) {
 		// TODO Auto-generated method stub
 		boolean b = false;
+		if(dataFine.getTime() >= dataInizio.getTime()) { 
 		GregorianCalendar di = new GregorianCalendar(),df=new GregorianCalendar();
 		di.setTime(dataInizio);
 		df.setTime(dataFine);
 		
-		if(df.get(GregorianCalendar.DAY_OF_MONTH) - df.get(GregorianCalendar.DAY_OF_MONTH) >=2)
-		b = true;
 		
+		if(df.get(GregorianCalendar.DAY_OF_MONTH) - di.get(GregorianCalendar.DAY_OF_MONTH) >=2)
+		b = true;
+		}
 		return b;
 	}
 
