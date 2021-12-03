@@ -11,6 +11,7 @@ public class InvalidCorsistaException extends Throwable {
 	 * 
 	 */
 	private static final long serialVersionUID = -7779587581405751075L;
+	
 	@Override
 	public String getMessage() {
 		// TODO Auto-generated method stub

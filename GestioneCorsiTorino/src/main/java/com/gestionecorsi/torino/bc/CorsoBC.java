@@ -81,13 +81,16 @@ public class CorsoBC {
 		if(b[0]&&b[1]&&b[2]&&b[3]&&b[4])
 		return true;
 		else
-		throw new InvalidCorsoException();
+		throw new InvalidCorsoException(b);
 		
 	}
 
 
 	private boolean checkValidAula(String aulaCorso) {
 		// TODO Auto-generated method stub
+		if(aulaCorso.equals(""))
+			return true;
+		
 		return aulaCorso.matches("[a-zA-Z0-9]{1,30}");
 	}
 
