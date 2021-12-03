@@ -101,7 +101,7 @@ Corso a =(Corso) session.getAttribute("newcorso");
 						<th>Commenti</th>
 						<th>Aula</th>
 						<th>Cod Docente</th>
-						<th>Aggiungi corsista</th>
+					
 						
 
 					</tr>
@@ -147,8 +147,8 @@ Corso a =(Corso) session.getAttribute("newcorso");
 				</tbody>
 </table>
 </div>
-<%} %>
-
+<%}else %>
+<p>Ancora nessun dato inserito</p>
 </div>
 
 </body>
