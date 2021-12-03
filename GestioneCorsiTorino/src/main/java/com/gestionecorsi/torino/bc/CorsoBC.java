@@ -81,13 +81,16 @@ public class CorsoBC {
 		if(b[0]&&b[1]&&b[2]&&b[3]&&b[4])
 		return true;
 		else
-		throw new InvalidCorsoException();
+		throw new InvalidCorsoException(b);
 		
 	}
 
 
 	private boolean checkValidAula(String aulaCorso) {
 		// TODO Auto-generated method stub
+		if(aulaCorso.equals(""))
+			return true;
+		
 		return aulaCorso.matches("[a-zA-Z0-9]{1,30}");
 	}
 
@@ -119,13 +122,15 @@ public class CorsoBC {
 	private boolean checkValidDurataCorso(Date dataInizio, Date dataFine) {
 		// TODO Auto-generated method stub
 		boolean b = false;
+		if(dataFine.getTime() >= dataInizio.getTime()) { 
 		GregorianCalendar di = new GregorianCalendar(),df=new GregorianCalendar();
 		di.setTime(dataInizio);
 		df.setTime(dataFine);
 		
-		if(df.get(GregorianCalendar.DAY_OF_MONTH) - df.get(GregorianCalendar.DAY_OF_MONTH) >=2)
-		b = true;
 		
+		if(df.get(GregorianCalendar.DAY_OF_MONTH) - di.get(GregorianCalendar.DAY_OF_MONTH) >=2)
+		b = true;
+		}
 		return b;
 	}
 
