@@ -57,6 +57,7 @@ class DocenteBCTest {
 			DocenteBC dBC = new DocenteBC();
 			String codDocente = dBC.getDocenteMostCorsi();
 			assertNotNull(codDocente,"Codice docente nullo");
+			dBC = new DocenteBC();
 			Docente docente = dBC.getByString(codDocente);
 			assertNotNull(docente);
 			System.out.println(docente.getNomeDocente()+" "+ 
