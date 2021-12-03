@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.gestionecorsi.torino.dao.CorsistaDAO;
 import com.gestionecorsi.torino.dbaccess.DBAccess;
+import com.gestionecorsi.torino.exception.InvalidCorsistaException;
 import com.gestionecorsi.torino.idgen.CorsistaIdGenerator;
 import com.gestionecorsi.torino.model.Corsista;
 
@@ -72,6 +73,28 @@ public class CorsistaBC {
 		} catch (SQLException sql) {
 			throw sql;
 		}
+	}
+	
+	public static boolean isValidCorsista(Corsista c)throws InvalidCorsistaException {
+		boolean [] b = {false,false};
+		
+		b[0] = checkNomeCorsista(c.getNomeCorsista());
+		b[1] = checkCognomeCorsita(c.getCognomeCorsista());
+		if(b[0] && b[1])
+		return true;
+		else
+		throw new InvalidCorsistaException(b);
+		
+	}
+
+	private static boolean checkCognomeCorsita(String cognomeCorsista)  {
+		// TODO Auto-generated method stub
+		return cognomeCorsista.matches("^[a-zA-Z .]{1,30}");
+	}
+
+	private static boolean checkNomeCorsista(String nomeCorsista) {
+		// TODO Auto-generated method stub
+		return nomeCorsista.matches("^[a-zA-Z .]{1,30}");
 	}
 
 }
