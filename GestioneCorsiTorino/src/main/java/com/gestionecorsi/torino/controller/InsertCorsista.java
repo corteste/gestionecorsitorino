@@ -53,6 +53,7 @@ public class InsertCorsista extends HttpServlet {
 				cc.setCodCorso(idc);
 				new CorsoCorsistaBC().createFromModel(cc);
 				hs.setAttribute("newcorsista", c);
+				response.sendRedirect("inseriscicorsista.jsp");
 			}
 		} catch (InvalidCorsistaException e) {
 			// TODO Auto-generated catch block
