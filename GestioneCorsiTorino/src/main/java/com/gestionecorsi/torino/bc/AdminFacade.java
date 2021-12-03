@@ -10,6 +10,17 @@ import com.gestionecorsi.torino.model.Corso;
 import com.gestionecorsi.torino.model.Docente;
 
 public class AdminFacade {
+	
+	public static AdminFacade getInstance() {
+		return new AdminFacade();
+	}
+
+
+	private AdminFacade() {
+		
+	}
+	
+	
 	/**
 	 * 
 	 * @param codDocente
