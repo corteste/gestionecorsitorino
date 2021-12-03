@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.gestionecorsi.torino.bc.CorsistaBC;
 import com.gestionecorsi.torino.bc.CorsoCorsistaBC;
@@ -34,6 +35,7 @@ public class InsertCorsista extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		HttpSession hs = request.getSession();
 		Corsista c = new Corsista();
 		CorsoCorsista cc = new CorsoCorsista();
 		String nome  = request.getParameter("nome") ,cognome = request.getParameter("cname") ;
@@ -50,6 +52,7 @@ public class InsertCorsista extends HttpServlet {
 				cc.setCodCorsista(c.getCodCorsista());
 				cc.setCodCorso(idc);
 				new CorsoCorsistaBC().createFromModel(cc);
+				hs.setAttribute("newcorsista", c);
 			}
 		} catch (InvalidCorsistaException e) {
 			// TODO Auto-generated catch block
