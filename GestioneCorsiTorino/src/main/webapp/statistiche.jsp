@@ -1,3 +1,6 @@
+<%@page import="com.gestionecorsi.torino.model.Corsista"%>
+<%@page import="java.util.List"%>
+<%@page import="com.gestionecorsi.torino.model.CorsoCorsista"%>
 <%@page import="com.gestionecorsi.torino.bc.AdminFacade"%>
 <%@page import="com.gestionecorsi.torino.model.Docente"%>
 <%
@@ -101,7 +104,41 @@
     </div>
     <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingsSix">
       	<div class="panel-body">
-      Contenuto statistica qui
+			<div class="table-responsive">
+				<table class="table table-hover">
+					<thead>
+					<tr>
+						<th>ID</th>
+						<th>Nome</th>
+						<th>Cognome</th>
+						<th>Corsi</th>
+					</tr>
+					</thead>
+					<tbody>
+						<%
+							List<CorsoCorsista> corsoCorsisti = AdminFacade.getInstance().getCorsoCorsisti();
+						
+							for(CorsoCorsista cc : corsoCorsisti) {
+								Corsista corsista = AdminFacade.getInstance().getCorsistaById(cc.getCodCorsista());
+								
+						%>
+						<tr>
+							<td><%= corsista.getCodCorsista()%></td>
+							<td><%= corsista.getNomeCorsista() %></td>
+							<td><%= corsista.getCognomeCorsista() %></td>
+							<td><button type="button" class="btn btn-info" 
+								data-toggle="modal" data-target="#gestisciArticoloModal_<%=cc.getCodCorsista()%>">Riepilogo
+								</button></td>
+							<td><jsp:include page="corsiCorsistaModal.jsp">
+									<jsp:param value="<%=cc.getCodCorsista()%>" name="id" />
+								</jsp:include></td>
+						</tr>
+						<% 
+							}
+						%>
+					</tbody>
+				</table>
+			</div>
    		</div>
     </div>
   </div>
