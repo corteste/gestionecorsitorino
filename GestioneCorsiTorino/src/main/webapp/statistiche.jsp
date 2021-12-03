@@ -15,7 +15,7 @@
 </head>
 <body>
 <jsp:include page="nav.jsp"/>
-<%
+	<%
 		String mostCorsi = AdminFacade.getInstance().getDocenteMostCorsi();
 		Docente docente = AdminFacade.getInstance().getDocenteByString(mostCorsi);
 	%>
@@ -25,7 +25,7 @@
     <div class="panel-heading" role="tab" id="headingOne">
       <h4 class="panel-title">
         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Statistica #1
+          I. Numero corsisti totali
         </a>
       </h4>
     </div>
@@ -39,7 +39,7 @@
     <div class="panel-heading" role="tab" id="headingTwo">
       <h4 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Statistica #2
+          II. Nome del corso più frequentato
         </a>
       </h4>
     </div>
@@ -53,7 +53,7 @@
     <div class="panel-heading" role="tab" id="headingThree">
       <h4 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Statistica #3
+          III. Data di inizio ultimo corso
         </a>
       </h4>
     </div>
@@ -67,7 +67,7 @@
     <div class="panel-heading" role="tab" id="headingFour">
       <h4 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-          Statistica #4
+          IV. Durata media dei corsi
         </a>
       </h4>
     </div>
@@ -81,7 +81,7 @@
     <div class="panel-heading" role="tab" id="headingFive">
       <h4 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-          Statistica #5
+          V. Numero di commenti presenti
         </a>
       </h4>
     </div>
@@ -95,7 +95,7 @@
     <div class="panel-heading" role="tab" id="headingSix">
       <h4 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-          Statistica #6
+          VI. Elenco corsisti
         </a>
       </h4>
     </div>
@@ -123,7 +123,7 @@
     <div class="panel-heading" role="tab" id="headingEight">
       <h4 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-          Statistica #8
+          VIII. Corsi con posti disponibili
         </a>
       </h4>
     </div>
@@ -134,8 +134,6 @@
     </div>
   </div>
 </div>
-
-
 
 </body>
 </html>
