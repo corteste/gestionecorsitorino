@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -42,6 +43,9 @@ public class LoginAdminController extends HttpServlet {
 				if (username != null) {
 					if (username.equals(admin)) {
 						session.setAttribute("admin", admin);
+						Cookie adminCookie = new Cookie("admin", admin);
+						adminCookie.setMaxAge(24*60*60);
+						response.addCookie(adminCookie);
 						response.sendRedirect("home.jsp");						
 					} else {
 						if(session.getAttribute("attempt") == null)
