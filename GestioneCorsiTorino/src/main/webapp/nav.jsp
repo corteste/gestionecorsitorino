@@ -1,5 +1,5 @@
 <%
-				String admin = (String) session.getAttribute("admin");
+String admin = (String) session.getAttribute("admin");
 if(admin != null ){		
 %>
 

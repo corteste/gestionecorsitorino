@@ -42,7 +42,7 @@
 					<%
 					
 					List<CorsoCorsista>la = AdminFacade.getInstance().getCorsoCorsisti();
-					if(la == null)
+					if(la.isEmpty())
 					{
 					%>
 					<tr><td>UNK</td>
