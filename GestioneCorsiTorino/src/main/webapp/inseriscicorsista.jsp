@@ -147,8 +147,9 @@ Corso a =(Corso) session.getAttribute("newcorso");
 				</tbody>
 </table>
 </div>
-<% session.removeAttribute("newcorsista");}else %>
+<% session.removeAttribute("newcorsista");}else{ %>
 <p>Ancora nessun dato inserito</p>
+<%} %>
 </div>
 
 </body>
