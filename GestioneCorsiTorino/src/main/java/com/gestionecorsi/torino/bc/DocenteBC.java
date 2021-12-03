@@ -30,7 +30,7 @@ public class DocenteBC {
 			//A CASO LANCIA ECCEZIONE  (RANDOM) SE RICHIAMO IL METODO (CLASSE CORSO BC METODO CHECK_VALID_DOCENTE)
 			//PROBABILE FIX
 			if(conn.isClosed()) //RIAPRO CONNESSIONE NEL CASO QUALCHE ALTRO BC L'HA CHIUSA 
-				DBAccess.getConnection();	
+				conn =DBAccess.getConnection();	
 			docente = DocenteDAO.getFactory().getModelByString(conn, codDocente);
 		} catch (SQLException | ClassNotFoundException | IOException e) {
 			throw new SQLException();
