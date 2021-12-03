@@ -8,17 +8,28 @@
   <servlet-name>LoginControl</servlet-name>
   <servlet-class>com.gestionecorsi.torino.controller.LoginAdminController</servlet-class>
   </servlet>
-	<servlet>
-  <servlet-name>InsertCorsista</servlet-name>
-  <servlet-class>com.gestionecorsi.torino.controller.InsertCorsista</servlet-class>
-  </servlet>
+
   <servlet-mapping>
    <servlet-name>LoginControl</servlet-name>
   <url-pattern>/loginControl</url-pattern>
   </servlet-mapping>
+  
+  	<servlet>
+  <servlet-name>InsertCorsista</servlet-name>
+  <servlet-class>com.gestionecorsi.torino.controller.InsertCorsista</servlet-class>
+  </servlet>
     <servlet-mapping>
    <servlet-name>InsertCorsista</servlet-name>
   <url-pattern>/InsertCorsista</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>CreateCorso</servlet-name>
+  <servlet-class>com.gestionecorsi.torino.controller.CreateCorso</servlet-class>
+  </servlet>
+    <servlet-mapping>
+   <servlet-name>CreateCorso</servlet-name>
+  <url-pattern>/creaCorso</url-pattern>
   </servlet-mapping>
   
    <error-page>
