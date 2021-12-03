@@ -1,6 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%
+Cookie[] cookies = request.getCookies();
+if (cookies != null) {
+	String admin = null;
+	for (Cookie cookie : cookies) {
+		if ("admin".equals(cookie.getName())) {
+			admin = cookie.getValue();
+			session.setAttribute("admin", admin);
+			response.sendRedirect("home.jsp");
+		}
+	}
+}
 int tmp = 0;
 if(session.getAttribute("attempt") != null)
 	tmp = (Integer)session.getAttribute("attempt");
