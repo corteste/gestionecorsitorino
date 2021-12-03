@@ -1,3 +1,5 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="com.gestionecorsi.torino.model.Corso"%>
 <%@page import="com.gestionecorsi.torino.model.Corsista"%>
 <%@page import="java.util.List"%>
 <%@page import="com.gestionecorsi.torino.model.CorsoCorsista"%>
@@ -48,7 +50,7 @@
     </div>
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
       	<div class="panel-body">
-      Contenuto statistica qui
+      <%=AdminFacade.getInstance().getPopularCorso() %>
    		</div>
     </div>
   </div>
@@ -62,7 +64,43 @@
     </div>
     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-      	Contenuto statistica qui  
+      	<%Corso a = AdminFacade.getInstance().getDataLastCorso(); %>
+      		<div class="table-responsive">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Cod Corso</th>
+						<th>Nome Corso</th>
+						<th>Data Inizio</th>
+						<th>Data Fine</th>
+						<th>Costo</th>
+						<th>Commenti</th>
+						<th>Aula</th>
+						<th>Cod Docente</th>
+						
+
+					</tr>
+				</thead>
+				<tbody>
+				
+					<tr>
+					<td><%=a.getIdCorso() %></td>
+					<td><%=a.getNomeCorso() %></td>
+					<td><%=new SimpleDateFormat("dd/MM/yyyy").format(a.getDataInizio()) %></td>
+					<td><%=new SimpleDateFormat("dd/MM/yyyy").format(a.getDataFine()) %></td>
+					<td><%=String.format("%.2f",a.getCostoCorso()) %></td>
+					<td><%=a.getCommenti() %></td>
+					<td><%=a.getAulaCorso() %></td>
+					<td><%=a.getCodDocente() %></td>
+                    </tr>
+				
+
+				</tbody>
+
+			</table>
+
+		</div>
+      	
       </div>
     </div>
   </div>
@@ -76,7 +114,7 @@
     </div>
     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
       	<div class="panel-body">
-      Contenuto statistica qui
+      <%= AdminFacade.getInstance().getAvgLength() %>
    		</div>
     </div>
   </div>
@@ -90,7 +128,7 @@
     </div>
     <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
       	<div class="panel-body">
-      Contenuto statistica qui
+      <%=AdminFacade.getInstance().getCountCommenti(-1) %>
    		</div>
     </div>
   </div>
@@ -166,7 +204,10 @@
     </div>
     <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
       	<div class="panel-body">
-      Contenuto statistica qui
+      <%for(String s : AdminFacade.getInstance().getAvailableCorso()){ %><!-- Conviene fare una lista di corsi e stamparlo a tabella -->
+  		<%=s %> 	
+  		<br>	
+   		<%} %>
    		</div>
     </div>
   </div>
