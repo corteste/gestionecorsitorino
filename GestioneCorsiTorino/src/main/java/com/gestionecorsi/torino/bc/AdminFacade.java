@@ -131,4 +131,7 @@ public class AdminFacade {
 	public List<CorsoCorsista> getCorsoCorsisti() throws ClassNotFoundException, SQLException, IOException{
 		return new CorsoCorsistaBC().getCorsoCorsisti();
 	}
+	public double getAvgLength() throws ClassNotFoundException, SQLException, IOException {
+		return new CorsoBC().getAvgLength();
+	}
 }
