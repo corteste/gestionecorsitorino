@@ -1,3 +1,4 @@
+<%@page import="com.gestionecorsi.torino.model.Corsista"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.gestionecorsi.torino.bc.AdminFacade"%>
 <%@page import="com.gestionecorsi.torino.model.Corso"%>
@@ -85,6 +86,9 @@
 		</div>
 		
 <p>Nuovo dato inserito</p>
+<%if(session.getAttribute("newcorso")!= null) {
+Corso a =(Corso) session.getAttribute("newcorso");
+%>
 <div class="table-responsive">
 <table class="table table-hover">
 	<thead>
@@ -97,14 +101,55 @@
 						<th>Commenti</th>
 						<th>Aula</th>
 						<th>Cod Docente</th>
-						<th>Aggiungi corsista</th>
+					
 						
 
 					</tr>
 				</thead>
+				<tbody>
+				<tr>
+					<td><%=a.getIdCorso() %></td>
+					<td><%=a.getNomeCorso() %></td>
+					<td><%=new SimpleDateFormat("dd/MM/yyyy").format(a.getDataInizio()) %></td>
+					<td><%=new SimpleDateFormat("dd/MM/yyyy").format(a.getDataFine()) %></td>
+					<td><%=String.format("%.2f",a.getCostoCorso()) %></td>
+					<td><%=a.getCommenti() %></td>
+					<td><%=a.getAulaCorso() %></td>
+					<td><%=a.getCodDocente() %></td>
+				
+				</tbody>
 </table>
 </div>
+<%session.removeAttribute("newcorso");}else
+	if(session.getAttribute("newcorsista")!= null){
+		Corsista a =(Corsista) session.getAttribute("newcorsista");
+%>
+<div class="table-responsive">
+<table class="table table-hover">
+	<thead>
+					<tr>
+						<th>Cod Corsista</th>
+						<th>Nome Corsista</th>
+						<th>Cognome Corsista</th>
+						<th>Precedenti formativi</th>
+				
+						
 
+					</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td><%=a.getCodCorsista() %></td>
+					<td><%=a.getNomeCorsista()%></td>
+					<td><%=a.getCognomeCorsista()%></td>
+					<td><%=a.getPrecedentiFormativi()%></td>
+			
+				</tbody>
+</table>
+</div>
+<% session.removeAttribute("newcorsista");}else{ %>
+<p>Ancora nessun dato inserito</p>
+<%} %>
 </div>
 
 </body>
