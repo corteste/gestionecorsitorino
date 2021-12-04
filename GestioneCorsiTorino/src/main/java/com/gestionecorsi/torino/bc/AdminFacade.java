@@ -3,6 +3,7 @@ package com.gestionecorsi.torino.bc;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 import com.gestionecorsi.torino.model.Corsista;
@@ -133,5 +134,8 @@ public class AdminFacade {
 	}
 	public double getAvgLength() throws ClassNotFoundException, SQLException, IOException {
 		return new CorsoBC().getAvgLength();
+	}
+	public List<Corso> getCorsiByDate(Date d) throws ClassNotFoundException, SQLException, IOException{
+		return new CorsoBC().getCorsiByDate(d);
 	}
 }

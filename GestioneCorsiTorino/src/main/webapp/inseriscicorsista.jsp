@@ -226,8 +226,7 @@ Corso a =(Corso) session.getAttribute("newcorso");
 		$('#datainizio').datepicker({
 			format : 'dd/mm/yyyy',
 			autoclose : true,
-			startDate : '01/01/1900',
-			endDate : new Date()
+			startDate : new Date()
 		});
 
 	});
@@ -236,8 +235,7 @@ Corso a =(Corso) session.getAttribute("newcorso");
 		$('#datafine').datepicker({
 			format : 'dd/mm/yyyy',
 			autoclose : true,
-			startDate : '01/01/1900',
-			endDate : new Date()
+			startDate : new Date() 
 		});
 
 	});

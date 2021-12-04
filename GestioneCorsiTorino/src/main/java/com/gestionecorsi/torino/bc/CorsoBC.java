@@ -141,4 +141,7 @@ public class CorsoBC {
 		return nomeCorso.matches("^[a-zA-Z .]{1,30}");
 	}
 	
+	public List<Corso> getCorsiByDate(Date d) throws SQLException{
+		return CorsoDAO.getFactory().getCorsiByDate(conn, d);
+	}
 }
