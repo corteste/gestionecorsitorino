@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import com.gestionecorsi.torino.model.Corsista;
 import com.gestionecorsi.torino.model.Corso;
@@ -137,5 +138,8 @@ public class AdminFacade {
 	}
 	public List<Corso> getCorsiByDate(Date d) throws ClassNotFoundException, SQLException, IOException{
 		return new CorsoBC().getCorsiByDate(d);
+	}
+	public Set<Long> getDistinctCorsista() throws ClassNotFoundException, SQLException, IOException{
+		return new CorsoCorsistaBC().getDistinctCorsista();
 	}
 }
