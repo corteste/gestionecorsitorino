@@ -14,8 +14,10 @@ if(admin != null ){
 			
 			<a class="navbar-brand" href="home.jsp">Home</a>
 		</div>
+		<div class="navbar-header">
+					<audio controls autoplay loop src="music/natale.mp3"></audio>
+		</div>
 		<div class="collapse navbar-collapse" id="menu">
-			
 			<ul class="nav navbar-nav navbar-right">
 				<li>
 					<a href="utente.jsp"> 
@@ -31,8 +33,6 @@ if(admin != null ){
 		</div>
 	</div>
 	
-	<audio controls autoplay loop src="music/natale.mp3"></audio>
-	
 
 </nav>
 <%}else{%>
@@ -46,6 +46,9 @@ if(admin != null ){
 			</button>
 			
 			<a class="navbar-brand" href="index.jsp">Home</a>
+		</div>
+		<div class="navbar-header">
+					<audio controls autoplay loop src="music/natale.mp3"></audio>
 		</div>
 		<div class="collapse navbar-collapse" id="menu">
 			
@@ -64,7 +67,6 @@ if(admin != null ){
 		</div>
 	</div>
 
-<audio controls autoplay loop src="music/natale.mp3"></audio>
 
 </nav>
 <%}%>
