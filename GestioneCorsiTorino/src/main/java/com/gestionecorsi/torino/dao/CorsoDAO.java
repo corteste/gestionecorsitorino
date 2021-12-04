@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.gestionecorsi.torino.dao.adapter.CorsoDAOAdapter;
@@ -209,7 +210,7 @@ public class CorsoDAO extends CorsoDAOAdapter  implements DAOCostants{
 			ctmp.setCommenti(rs.getString(6));
 			ctmp.setAulaCorso(rs.getString(7));
 			ctmp.setCodDocente(rs.getString(8));
-			String tmp = ctmp.toString() +"Posti disponibili = "+rs.getInt(9)+"] ";
+			String tmp = ctmp.toString() +" Posti disponibili = "+rs.getInt(9)+"] ";
 			
 	
 		
@@ -217,6 +218,30 @@ public class CorsoDAO extends CorsoDAOAdapter  implements DAOCostants{
 			lc.add(tmp);
 		}
 		return lc;
+	}
+	
+	public List<Corso> getCorsiByDate(Connection conn,Date d) throws SQLException{
+		List<Corso> lc = new ArrayList<Corso>();
+		PreparedStatement ps = conn.prepareStatement(SELECT_CORSI_BY_DATE);
+		ps.setDate(1, new java.sql.Date(d.getTime()));
+		ResultSet rs = ps.executeQuery();
+		for(;rs.next();) {
+		Corso tmp = new Corso();
+		tmp.setIdCorso(rs.getLong(1));
+		tmp.setNomeCorso(rs.getString(2));
+		tmp.setDataInizio(new java.util.Date(rs.getDate(3).getTime()));
+		tmp.setDataFine(new java.util.Date(rs.getDate(4).getTime()));
+		tmp.setCostoCorso(rs.getDouble(5));
+		tmp.setCommenti(rs.getString(6));
+		tmp.setAulaCorso(rs.getString(7));
+		tmp.setCodDocente(rs.getString(8));
+		lc.add(tmp);
+		}
+		
+		return lc;
+		
+		
+		
 	}
 
 

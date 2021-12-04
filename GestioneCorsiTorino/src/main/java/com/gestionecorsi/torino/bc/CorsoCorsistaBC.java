@@ -3,7 +3,9 @@ package com.gestionecorsi.torino.bc;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.gestionecorsi.torino.dao.CorsoCorsistaDAO;
 import com.gestionecorsi.torino.dbaccess.DBAccess;
@@ -33,6 +35,16 @@ public class CorsoCorsistaBC {
 	public List<CorsoCorsista> getCorsoCorsisti() throws SQLException{
 		
 		return CorsoCorsistaDAO.getFactory().getAll(conn);
+	}
+	
+	public Set<Long> getDistinctCorsista() throws SQLException{
+		Set<Long> cod = new HashSet<Long>();
+		for(CorsoCorsista c : this.getCorsoCorsisti())
+		{
+			cod.add(c.getCodCorsista());
+		}
+		
+		return cod;
 	}
 
 }
