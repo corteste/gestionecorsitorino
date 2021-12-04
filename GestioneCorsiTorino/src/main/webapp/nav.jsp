@@ -30,6 +30,9 @@ if(admin != null ){
 			</ul>
 		</div>
 	</div>
+	
+	<audio controls autoplay loop src="music/natale.mp3"></audio>
+	
 
 </nav>
 <%}else{%>
@@ -60,6 +63,8 @@ if(admin != null ){
 			</ul>
 		</div>
 	</div>
+
+<audio controls autoplay loop src="music/natale.mp3"></audio>
 
 </nav>
 <%}%>
