@@ -235,6 +235,7 @@ public class CorsoDAO extends CorsoDAOAdapter  implements DAOCostants{
 		tmp.setCommenti(rs.getString(6));
 		tmp.setAulaCorso(rs.getString(7));
 		tmp.setCodDocente(rs.getString(8));
+		lc.add(tmp);
 		}
 		
 		return lc;

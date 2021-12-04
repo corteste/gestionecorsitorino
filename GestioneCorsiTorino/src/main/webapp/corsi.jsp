@@ -8,10 +8,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%@ include file="CDN.html" %>
 <meta charset="ISO-8859-1">
 <title>Eliminazione corsi</title>
 </head>
 <body>
+<jsp:include page="nav.jsp"/>
+<div class="container" style="margin-top: 100px;">
 	<div class="table-responsive">
 			<table class="table table-hover">
 				<thead>
@@ -45,6 +48,7 @@
 					<td>UNK</td>
 					<td>UNK</td>
 					
+					
 				
 					</tr>
 					<%
@@ -63,7 +67,7 @@
 					<td><%=a.getCommenti() %></td>
 					<td><%=a.getAulaCorso() %></td>
 					<td><%=a.getCodDocente() %></td>
-						<td><button data-id="<%=a.getIdCorso()%>" id="add" data-toggle="modal" data-target="#aggiungiCorista" class="btn btn-primary btn-xs">Aggiungi corsista</button></td>
+						<td><button id="del" data-id="<%=a.getIdCorso()%>"   data-toggle="modal" data-target="#eliminaCorso" class="btn btn-danger btn-xs">Elimina corso</button></td>
 					
 						</tr>
 					<%
@@ -74,8 +78,17 @@
 				</tbody>
 
 			</table>
-			<button   data-toggle="modal" data-target="#eliminaCorso" class="btn btn-primary btn-xs">Elimina corso</button>
+			
 
 		</div>
+		</div>
 </body>
+
+<%@ include file="delCorsoModal.jsp"%>
+<script type="text/javascript">
+	$(document).on("click", "#del", function() {
+		$("#idc").val($(this).data('id'));
+
+	});
+</script>
 </html>
