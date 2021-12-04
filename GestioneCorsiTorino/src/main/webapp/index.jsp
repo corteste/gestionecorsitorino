@@ -24,11 +24,12 @@ if(tmp< 5){
 <head>
 <%@ include file="CDN.html" %>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="css/style.css">
 <title>Login Page</title>
 </head>
 <body>
 <jsp:include page="nav.jsp"/>
-<div style="margin-top:100px;"class="container">
+<div class="container" id="boxIndex">
 <%if(tmp >0){ %>
 <p>Ricontrolla i dati</p>
 <p>Hai a disposizione <%=""+(5-(tmp))+"" %> tentativi</p>
@@ -39,7 +40,7 @@ class="form-horizontal">
 <!--------------------------------------------- Username -->
 <div class="form-group">
 	<div class="col-md-4 inputGroupContainer">
-		<div class="input-group">
+		<div class="input-group" id="boxUser">
 			<span class="input-group-addon">
 				<i class="glyphicon glyphicon-user"></i>
 			</span>
@@ -49,12 +50,13 @@ class="form-horizontal">
 	</div>
 	<div class="col-md-7 control-label" id="admin"></div>
 </div>
-
+<br>
+<br>
 <!--------------------------------------------- Password -->
 <div class="form-group">
 	
 	<div class="col-md-4 inputGroupContainer">
-		<div class="input-group">
+		<div class="input-group" id="boxCodAdm">
 			<span class="input-group-addon">
 				<i class="glyphicon glyphicon-lock"></i>
 			</span>
@@ -65,8 +67,8 @@ class="form-horizontal">
 	<div class="col-md-7 control-label" id="infoPassword"></div>
 </div>
 
-<div class="row">
-	<div class="col-md-2">
+<div class="row" id="buttonDiv">
+	<div class="col-md-2" id="buttonLogin">
 		<button type="submit" class="btn btn-info">
 			Login&nbsp;<span class="glyphicon glyphicon-log-in"></span>
 		</button>

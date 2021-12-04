@@ -1,0 +1,94 @@
+*{
+	font-family: Brush Script MT;
+	
+}
+body,html {
+	height: 100%;
+	background-image: url("https://cdn.wallpapersafari.com/91/33/RXTgcW.jpg");
+}
+
+.form-control, .btn {
+	font-size: 20px;
+}
+
+#navadm, #navout {
+	background-color: darkred;
+	font-family: Lucida Handwriting;
+	font-size: 15pt;
+}
+
+audio {
+	display: none;
+}
+
+#boxIndex{
+   width: 350px;
+   height: 200px;
+   position: absolute;
+   top: 50%;
+   left: 52%;
+   margin: -100px 0 0 -175px;
+   text-align: center;
+   box-shadow: 
+			10px  10px 5px #dedede,
+			-10px -10px 5px #dedede,
+			10px -10px 5px #dedede,
+			-10px  10px 5px #dedede;
+	background-color: rgba(233,44,22,0.67);
+}
+
+#boxUser{
+	margin: 30px;
+	position: absolute;
+	text-align: center;
+	width: 250px;
+}
+
+#boxCodAdm{
+	position: absolute;
+	text-align: center;
+	width: 250px;
+	margin: 30px;
+}
+
+#buttonLogin {
+	margin-left: 86px;
+	margin-top: 60px;
+}
+
+#buttonDiv #buttonLogin button{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn-info {
+		background-color: rgba(55,148,0, 0.85);
+	border-color: darkgreen;
+}
+
+.btn-info:hover {
+	background-color: green;
+	border-color: darkgreen;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #CECECE; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #9C9C9C; 
+}
