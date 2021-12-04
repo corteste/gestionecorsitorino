@@ -53,7 +53,6 @@ if(admin != null ){
 		<div class="collapse navbar-collapse" id="menu">
 			
 			<ul class="nav navbar-nav navbar-right">
-			</li>
 				<li>
 					<a style="color: gold" href="index.jsp"> 
 						<span class="glyphicon glyphicon-user"></span> 
