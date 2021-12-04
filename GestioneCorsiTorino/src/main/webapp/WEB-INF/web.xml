@@ -32,6 +32,15 @@
   <url-pattern>/creaCorso</url-pattern>
   </servlet-mapping>
   
+    <servlet>
+  <servlet-name>DeleteCorso</servlet-name>
+  <servlet-class>com.gestionecorsi.torino.controller.DeleteCorso</servlet-class>
+  </servlet>
+    <servlet-mapping>
+   <servlet-name>DeleteCorso</servlet-name>
+  <url-pattern>/deleteCorso</url-pattern>
+  </servlet-mapping>
+  
    <error-page>
         <error-code>404</error-code>
         <location>/error404.jsp</location>

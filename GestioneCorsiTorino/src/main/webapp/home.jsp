@@ -1,3 +1,4 @@
+<%@page import="java.util.Set"%>
 <%@page import="com.gestionecorsi.torino.model.CorsoCorsista"%>
 <%@page import="com.gestionecorsi.torino.model.Corsista"%>
 <%@page import="java.util.List"%>
@@ -42,7 +43,7 @@
 				<tbody>
 					<%
 					
-					List<CorsoCorsista>la = AdminFacade.getInstance().getCorsoCorsisti();
+					Set<Long>la = AdminFacade.getInstance().getDistinctCorsista();
 					if(la.isEmpty())
 					{
 					%>
@@ -56,8 +57,8 @@
 					}else{
 					%>
 					<%	
-					for (CorsoCorsista cc : la) {
-						Corsista c = AdminFacade.getInstance().getCorsistaById(cc.getCodCorsista());
+					for (Long cc : la) {
+						Corsista c = AdminFacade.getInstance().getCorsistaById(cc);
 					%>
 					<tr>
 						
