@@ -14,6 +14,7 @@
 <head>
 <%@ include file="CDN.html" %>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="css/home_style.css">
 <title>Home</title>
 </head>
 <body>
