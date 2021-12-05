@@ -13,6 +13,7 @@
 <html>
 <head>
 <%@ include file="CDN.html" %>
+<%@ include file="neve.html" %>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="css/home_style.css">
 <title>Home</title>
@@ -23,7 +24,7 @@
 			<div class="page-header">
 				<h3>Home Page</h3>
 			</div>
-				<div class="pulsanti">
+				<div class="pulsanti" id="bottoni">
 				<a href="inseriscicorsista.jsp" class="btn btn-primary btn-lg">Inserisci</a>
 				<a href="statistiche.jsp" class="btn btn-primary btn-lg">Statistiche</a>
 				<a href="corsi.jsp" class="btn btn-primary btn-lg">Elimina Corsi</a>
@@ -31,6 +32,7 @@
 					<div class="table-responsive">
 			<table class="table table-hover">
 				<thead>
+					<img src="img/deco1.png" />
 					<tr>
 						<th>COD_CORSISTA</th>
 						<th>NOME</th>

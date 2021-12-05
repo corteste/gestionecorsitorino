@@ -1,4 +1,26 @@
 body,html {
 	height: 100%;
-	background-image: url("https://wallpaperaccess.com/full/4191064.jpg");
+	background-image: url("https://wallpapersmug.com/download/1920x1200/334b31/snowfall-winter-hut-winter-christmas.jpg");
+}
+
+table {
+	background-color: #FCF5E5;
+	font-size: 15pt;
+	border-radius: 30px;
+}
+
+img {
+	position: relative;
+	max-height: 200px;
+	
+}
+
+#bottoni {
+	margin-bottom: 35px;
+	margin-left: 35%;
+}
+
+.btn {
+	position: relative;
+	background-color: rgba(252, 245, 229, 0.75);
 }

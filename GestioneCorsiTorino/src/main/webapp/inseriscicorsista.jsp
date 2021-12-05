@@ -13,6 +13,7 @@
 <html>
 <head>
 <%@ include file="CDN.html" %>
+<%@ include file="neve.html" %>
 <meta charset="ISO-8859-1">
 <title>Inserisci nuovo corsista</title>
 </head>
