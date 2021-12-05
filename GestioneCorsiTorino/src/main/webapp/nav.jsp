@@ -12,7 +12,7 @@ if(admin != null ){
 				<span class="icon-bar"></span>
 			</button>
 			
-			<a style="color: gold" class="navbar-brand" href="home.jsp">Home</a>
+			<a style="color: gold; font-size: 20pt" class="navbar-brand" href="home.jsp">Home</a>
 		</div>
 		<div class="navbar-header">
 					<audio controls autoplay loop src="music/natale.mp3"></audio>
@@ -45,7 +45,7 @@ if(admin != null ){
 				<span class="icon-bar"></span>
 			</button>
 			
-			<a style="color: gold" class="navbar-brand" href="index.jsp">Home</a>
+			<a style="color: gold; font-size: 20pt" class="navbar-brand" href="index.jsp">Home</a>
 		</div>
 		<div class="navbar-header">
 					<audio controls autoplay loop src="music/natale.mp3"></audio>
