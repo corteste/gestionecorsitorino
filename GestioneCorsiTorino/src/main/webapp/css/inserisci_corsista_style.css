@@ -9,6 +9,11 @@ table {
 	border-radius: 30px;
 }
 
+p {
+	font-size: 20pt;
+	color: white;
+}
+
 #deco {
 	position: absolute;
 	max-height: 60px;
@@ -29,13 +34,12 @@ table {
 	margin-left: 35%;
 }
 
-.btn {
+.btn-primary {
 	position: relative;
-	background-color: rgba(252, 245, 229, 0.75);
+	background-color: rgba(211,211,211, 0.80);
 }
 
-.page-header {
-	padding-bottom: 9px;
-	margin: 40px 0 20px;
-	border-bottom: none;
+.btn-primary:hover {
+	position: relative;
+	background-color: rgba(192,192,192, 0.95);
 }

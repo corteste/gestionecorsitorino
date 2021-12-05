@@ -15,6 +15,7 @@
 <%@ include file="CDN.html" %>
 <%@ include file="neve.html" %>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="css/inserisci_corsista_style.css" />
 <title>Inserisci nuovo corsista</title>
 </head>
 <body>
