@@ -121,18 +121,24 @@ public class CorsoBC {
 
 	private boolean checkValidDurataCorso(Date dataInizio, Date dataFine) {
 		// TODO Auto-generated method stub
-		boolean b = false;
+		
 		if(dataFine.getTime() > dataInizio.getTime()) { 
 		GregorianCalendar di = new GregorianCalendar(),df=new GregorianCalendar();
 		di.setTime(dataInizio);
 		df.setTime(dataFine);
+		int yf = df.get(GregorianCalendar.YEAR) ,mf = df.get(GregorianCalendar.MONTH) ,gf = df.get(GregorianCalendar.DAY_OF_MONTH),yi = di.get(GregorianCalendar.YEAR),mi = di.get(GregorianCalendar.MONTH),gi =di.get(GregorianCalendar.DAY_OF_MONTH);  
 		
-		
-		if(df.get(GregorianCalendar.DAY_OF_MONTH) - di.get(GregorianCalendar.DAY_OF_MONTH) >=2)
-		b = true;
-		}
-		return b;
+		if(yf - yi > 0)
+			return true;
+		if(mf - mi > 0)
+			return true;
+		if(gf - gi >= 2 )
+			return true;
+	
+		return false;
 	}
+		return false;
+}
 
 
 	private boolean checkValidNomeCorso(String nomeCorso) {
