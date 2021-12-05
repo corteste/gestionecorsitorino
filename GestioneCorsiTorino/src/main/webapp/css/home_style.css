@@ -5,14 +5,23 @@ body,html {
 
 table {
 	background-color: #FCF5E5;
-	font-size: 15pt;
+	font-size: 18pt;
 	border-radius: 30px;
 }
 
-img {
-	position: relative;
-	max-height: 200px;
+#deco {
+	position: absolute;
+	max-height: 60px;
+	left: 12%;
+	top: 55%;
 	
+}
+
+#deco1 {
+	position: absolute;
+	max-height: 60px;
+	left: 83%;
+	top: 57%;
 }
 
 #bottoni {

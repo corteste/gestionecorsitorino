@@ -22,7 +22,7 @@
 <jsp:include page="nav.jsp"/>
 	<div class="container" style="margin-top: 100px;">
 			<div class="page-header">
-				<h3>Home Page</h3>
+				<h3><img src="img/homepage.png" /></h3>
 			</div>
 				<div class="pulsanti" id="bottoni">
 				<a href="inseriscicorsista.jsp" class="btn btn-primary btn-lg">Inserisci</a>
@@ -30,9 +30,10 @@
 				<a href="corsi.jsp" class="btn btn-primary btn-lg">Elimina Corsi</a>
 			</div>
 					<div class="table-responsive">
+					<img id="deco" src="img/deco.png" />
+					<img id="deco1" src="img/deco1.png" />
 			<table class="table table-hover">
 				<thead>
-					<img src="img/deco1.png" />
 					<tr>
 						<th>COD_CORSISTA</th>
 						<th>NOME</th>
