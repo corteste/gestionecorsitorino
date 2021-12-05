@@ -9,17 +9,13 @@ table {
 	border-radius: 30px;
 }
 
-p {
-	font-size: 20pt;
-	color: white;
-}
 
-.btn-primary {
+.btn-danger {
 	position: relative;
-	background-color: rgba(211,211,211, 0.80);
+	background-color: rgba(255, 0, 0, 0.80);
 }
 
-.btn-primary:hover {
+.btn-danger:hover {
 	position: relative;
 	background-color: rgba(192,192,192, 0.95);
 }

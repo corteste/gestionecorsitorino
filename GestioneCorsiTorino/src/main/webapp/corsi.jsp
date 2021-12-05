@@ -12,10 +12,12 @@
 <%@ include file="neve.html" %>
 <meta charset="ISO-8859-1">
 <title>Eliminazione corsi</title>
+<link rel="stylesheet" href="css/elimina_corsi.css">
 </head>
 <body>
 <jsp:include page="nav.jsp"/>
 <div class="container" style="margin-top: 100px;">
+<h3><img src="img/eliminacorso.png"></h3>
 	<div class="table-responsive">
 			<table class="table table-hover">
 				<thead>
